@@ -1,0 +1,11 @@
+generated: '2026-09-20'
+method: searched
+source: https://maxvideoai.com/docs/mcp
+limit_count: 0
+limits: []
+response_headers: []
+notes: >-
+  No numeric rate limits or RateLimit/X-RateLimit/Retry-After response headers are
+  published. The MCP reference states only that "server limits apply" and that
+  authenticated responses carry Cache-Control: private, no-store. An honest zero:
+  limits exist server-side but are undocumented anonymously.

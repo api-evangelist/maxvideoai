@@ -1,0 +1,30 @@
+generated: '2026-09-20'
+method: searched
+source: https://maxvideoai.com/docs/mcp
+format: json-rpc
+envelope: JSON-RPC 2.0 error object (code, message); correlationId on internal errors
+problems:
+- code: -32001
+  http_status: 401
+  title: Authentication required
+  meaning: No valid bearer grant on the MCP request.
+  action: >-
+    Let the client follow the WWW-Authenticate challenge and resource_metadata
+    discovery to complete a fresh OAuth grant. Never paste a bearer token into the
+    MCP address.
+- code: INTERNAL_ERROR
+  title: Internal error
+  meaning: Server-side failure during a tool call.
+  action: Retain the returned correlationId, stop repeated submissions, and contact support if persistent.
+- code: QUOTE_EXPIRED
+  title: Quote expired
+  meaning: The exact quote returned by prepare_generation is past its expiresAt.
+  action: Call prepare_generation again for a fresh quote and re-request approval. Treat expiry as definitive only when the server returns QUOTE_EXPIRED.
+- code: MODE_MISSING
+  title: Requested mode unavailable
+  meaning: The requested model mode/route is not available in the connected environment.
+  action: Call get_model_details again; the model may support multiple routes through different providers.
+notes: >-
+  Derived from the provider's published MCP troubleshooting reference (no OpenAPI
+  exists for this provider). Codes are the documented, human-facing set; the live
+  tool responses may carry additional server-side codes not published anonymously.

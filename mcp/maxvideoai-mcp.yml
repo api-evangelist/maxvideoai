@@ -1,0 +1,89 @@
+generated: '2026-09-20'
+method: searched
+status: published
+source: https://maxvideoai.com/docs/mcp
+notes: >-
+  Live tools/list is OAuth-gated (POST returns HTTP 401 / JSON-RPC -32001,
+  "Authentication required."), so tool names and descriptions below are taken
+  verbatim from the provider's published MCP reference and packaged skills;
+  per-tool inputSchema requires authenticated introspection and is not captured.
+deployment:
+  mode: remote
+  endpoint: https://api.maxvideoai.com/mcp
+  transport: streamable-http
+  auth: oauth
+  verified: probed
+server:
+  name: com.maxvideoai/maxvideoai
+  title: MaxVideoAI
+  version: 0.3.5
+  transport: http
+  url: https://api.maxvideoai.com/mcp
+  registry_manifest: https://raw.githubusercontent.com/camgraphe/maxvideoai-plugin/main/server.json
+  website: https://maxvideoai.com/mcp
+  repository: https://github.com/camgraphe/maxvideoai-plugin
+auth:
+  protocol: OAuth 2.1
+  authorization_server: https://vujvontfztdzszylnsyc.supabase.co/auth/v1
+  protected_resource_metadata: https://api.maxvideoai.com/.well-known/oauth-protected-resource/mcp
+  authorization_server_metadata: https://api.maxvideoai.com/.well-known/oauth-authorization-server
+  dynamic_client_registration: true
+  pkce: S256
+  scopes:
+  - openid
+  - email
+  - profile
+  bearer_methods: [header]
+tools:
+- name: get_account_status
+  description: Read connection, credit balance, trial state, limits, and safe account destinations.
+  writes: false
+- name: list_models
+  description: Find current executable image and video models by mode and requirements.
+  writes: false
+- name: get_model_details
+  description: Read exact settings, reference roles, limits, evidence, and pricing inputs for a model.
+  writes: false
+- name: recommend_models
+  description: Match a brief to factual model options and trade-offs.
+  writes: false
+- name: calculate_project_budget
+  description: Compare one to four complete project proposals at current prices (free estimate, no debit).
+  writes: false
+- name: list_media
+  description: List the connected user's ready private image, video, or audio assets.
+  writes: false
+- name: create_reference_upload_link
+  description: Create a short-lived private MaxVideoAI browser upload handoff.
+  writes: creates-handoff
+- name: import_reference_files
+  description: Import up to eight user-authorized attachments into the private library; returns assetId values.
+  writes: stores-assets
+- name: prepare_generation
+  description: Validate model, settings, references, ownership, and balance; return an exact short-lived quote. No charge.
+  writes: false
+- name: confirm_generation
+  description: Approve one exact quote and submit the job idempotently. Authorizes exactly one paid attempt.
+  writes: true
+- name: get_generation_status
+  description: Read a known job's completion, output, failure, and refund state.
+  writes: false
+- name: list_recent_generations
+  description: Recover recent jobs to avoid accidental duplicate paid submissions.
+  writes: false
+- name: present_generation
+  description: Present a completed owned image or playable video inline in compatible hosts.
+  writes: false
+- name: create_topup_link
+  description: Open a secure MaxVideoAI credit top-up handoff for a missing amount. Payment stays on MaxVideoAI.
+  writes: payment-handoff
+clients_supported:
+- Claude (remote MCP connector)
+- ChatGPT (developer mode; Business/Enterprise/Edu write, Pro read-only)
+- Codex (plugin 0.3.5 or remote MCP)
+- OpenClaw (direct MCP or ClawHub skill)
+- n8n (self-hosted MCP Client, tested on 2.38.7)
+boundaries:
+- No general-purpose REST API or customer API keys
+- No customer callback/webhook endpoint management
+- No payment-data collection inside chat

@@ -1,0 +1,19 @@
+generated: '2026-09-20'
+method: searched
+source: https://github.com/camgraphe/maxvideoai-plugin/tree/main/skills
+notes: >-
+  Provider-published Agent Skills, saved verbatim from the official plugin repo
+  (camgraphe/maxvideoai-plugin, skills/plan and skills/generate). These are the
+  operating instructions the vendor ships for Codex/Claude ($maxvideoai:plan,
+  $maxvideoai:generate); grounded in the live MCP tools rather than an OpenAPI.
+skills:
+- file: maxvideoai-plan.md
+  name: plan
+  api: mcp/maxvideoai-mcp.yml
+  operations: [list_models, get_model_details, recommend_models, calculate_project_budget]
+  description: Turn an open brief into an executable model shortlist and multi-shot production budget using live MaxVideoAI model facts.
+- file: maxvideoai-generate.md
+  name: generate
+  api: mcp/maxvideoai-mcp.yml
+  operations: [get_model_details, list_media, import_reference_files, create_reference_upload_link, prepare_generation, confirm_generation, get_generation_status, list_recent_generations, present_generation, get_account_status, create_topup_link]
+  description: Take one concrete request from references through an exact quote, single explicit paid approval, execution, and result recovery.

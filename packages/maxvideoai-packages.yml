@@ -1,0 +1,32 @@
+generated: '2026-09-20'
+method: searched
+source: >-
+  https://github.com/camgraphe/maxvideoai-plugin,
+  https://registry.modelcontextprotocol.io/v0/servers?search=maxvideoai
+notes: >-
+  MaxVideoAI ships no traditional client SDK (there is no REST API to wrap). Its
+  first-party distributable is the MCP connector/plugin package, published to the
+  official MCP Registry and installable in Codex/Claude. Not present on npm, PyPI,
+  RubyGems, crates.io, NuGet or Maven (all probed, 404).
+packages:
+- name: com.maxvideoai/maxvideoai
+  language: n/a
+  registry: mcp-registry
+  kind: mcp-connector
+  url: https://registry.modelcontextprotocol.io/v0/servers?search=maxvideoai
+  official: true
+  version: '0.3.3'
+  published: null
+  note: >-
+    Version in the official MCP Registry lags the source repo (0.3.3 vs VERSION 0.3.5);
+    the registry entry carries no published date field.
+- name: camgraphe/maxvideoai-plugin
+  language: n/a
+  registry: github
+  kind: mcp-plugin
+  url: https://github.com/camgraphe/maxvideoai-plugin
+  official: true
+  version: '0.3.5'
+  published: '2026-09-16'
+  install: codex plugin marketplace add camgraphe/maxvideoai-plugin --ref v0.3.5 && codex plugin add maxvideoai@maxvideoai
+  note: Also a Claude remote-connector plugin (.claude-plugin/plugin.json) and a raw .mcp.json remote definition. License BUSL-1.1.

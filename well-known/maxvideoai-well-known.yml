@@ -1,0 +1,81 @@
+generated: '2026-09-20'
+method: searched
+source: live probes of /.well-known/* on every host the record knows
+notes: >-
+  MaxVideoAI is an MCP-native provider. Its machine-readable auth surface is
+  RFC 8414 authorization-server metadata and RFC 9728 protected-resource
+  metadata (served at the resource-specific path /.well-known/oauth-protected-resource/mcp,
+  advertised in the MCP endpoint's WWW-Authenticate challenge). No security.txt,
+  api-catalog, ai-plugin, apis.json or agent card is served. Path-echo negative
+  control returned 404 on every host, so hits are genuine.
+hosts:
+- host: https://maxvideoai.com
+  path_echo_control: passed
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: maxvideoai-oauth-authorization-server.json
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+- host: https://api.maxvideoai.com
+  path_echo_control: passed
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: maxvideoai-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource/mcp
+    status: 200
+    file: maxvideoai-oauth-protected-resource-mcp.json
+    note: >-
+      resource-specific RFC 9728 metadata for the MCP server, advertised in the
+      401 WWW-Authenticate challenge on https://api.maxvideoai.com/mcp
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+referenced_hosts:
+- host: https://vujvontfztdzszylnsyc.supabase.co
+  role: authorization_server
+  note: >-
+    Named in authorization_servers of the protected-resource metadata and in the
+    authorization/token/registration endpoints of the auth-server metadata. This
+    is MaxVideoAI's Supabase auth tenant, not a first-party MaxVideoAI host, so
+    its /.well-known documents are Supabase's and are not indexed as MaxVideoAI's.

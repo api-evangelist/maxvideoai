@@ -1,0 +1,19 @@
+generated: '2026-09-20'
+method: searched
+probe: true
+signals:
+  subprocessors:
+    url: https://maxvideoai.com/legal/subprocessors
+    stated_update: '26 October 2025'
+    subprocessors: [Stripe Payments Europe Ltd., Neon Inc., Supabase, Vercel Inc., Amazon Web Services (AWS S3), Fal.ai, Resend Inc.]
+    evidence:
+    - source: https://maxvideoai.com/legal/subprocessors
+      keywords: [subprocessors, stripe, supabase, aws, fal.ai, last updated]
+notes: >-
+  Only a dated subprocessor list was found. Probed and not served (404):
+  /accessibility, /ai/transparency, /legal/data-residency,
+  /legal/data-processing-agreement, /privacy/requests, /transparency,
+  /docs/data-residency, /security, /trust, /.well-known/security.txt. A privacy
+  policy, terms and acceptable-use policy are published but carry no distinct
+  regulatory signal from this list's vocabulary. An empty remainder is the
+  measurement, not a gap in effort.

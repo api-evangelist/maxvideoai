@@ -1,0 +1,54 @@
+generated: '2026-09-20'
+method: searched
+source: >-
+  https://api.maxvideoai.com/.well-known/oauth-authorization-server,
+  https://api.maxvideoai.com/.well-known/oauth-protected-resource/mcp,
+  https://raw.githubusercontent.com/camgraphe/maxvideoai-plugin/main/server.json
+standards:
+- id: mcp
+  name: Model Context Protocol
+  conforms: true
+  evidence: >-
+    server.json declares $schema modelcontextprotocol.io server.schema 2025-12-11
+    with a streamable-http remote at https://api.maxvideoai.com/mcp; live endpoint
+    speaks JSON-RPC 2.0 and issues an RFC 9728 WWW-Authenticate challenge.
+- id: oauth2.1
+  name: OAuth 2.1
+  conforms: true
+  evidence: authorization code grant with PKCE S256, refresh tokens; documented in docs/mcp and AS metadata.
+- id: rfc8414-oauth-authorization-server-metadata
+  name: RFC 8414 Authorization Server Metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200 with issuer + endpoints.
+- id: rfc9728-oauth-protected-resource-metadata
+  name: RFC 9728 Protected Resource Metadata
+  conforms: true
+  evidence: /.well-known/oauth-protected-resource/mcp returns 200 and is advertised via WWW-Authenticate resource_metadata.
+- id: rfc7591-dynamic-client-registration
+  name: RFC 7591 Dynamic Client Registration
+  conforms: true
+  evidence: registration_endpoint present in AS metadata.
+- id: rfc7636-pkce
+  name: RFC 7636 PKCE
+  conforms: true
+  evidence: code_challenge_methods_supported [S256] in AS metadata.
+- id: oidc
+  name: OpenID Connect
+  conforms: partial
+  evidence: openid scope offered and used, but no /.well-known/openid-configuration is served (auth is delegated to a Supabase tenant).
+- id: rfc8615-well-known-uris
+  name: RFC 8615 Well-Known URIs
+  conforms: true
+  evidence: OAuth discovery documents served under /.well-known/.
+domain_standard:
+  id: mcp
+  name: Model Context Protocol
+  present: true
+  evidence: >-
+    MCP is the domain standard for agent tool access; MaxVideoAI ships a conformant
+    remote MCP server (server.json + live streamable-http endpoint) rather than a
+    bespoke integration, so any MCP-speaking client integrates with no custom connector.
+notes: >-
+  Derived/searched from live discovery documents and the published server manifest.
+  No published compliance program (SOC 2 / ISO 27001 / PCI / HIPAA / FedRAMP) was
+  found, so no Compliance pointer is emitted.

@@ -1,0 +1,28 @@
+generated: '2026-09-20'
+method: searched
+source: https://api.maxvideoai.com/.well-known/oauth-authorization-server
+docs: https://maxvideoai.com/docs/mcp
+schemes:
+- name: OAuth2
+  source: well-known/maxvideoai-oauth-authorization-server.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://vujvontfztdzszylnsyc.supabase.co/auth/v1/oauth/authorize
+    tokenUrl: https://vujvontfztdzszylnsyc.supabase.co/auth/v1/oauth/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication of the connecting user.
+  flows: [authorizationCode]
+- scope: email
+  description: Access to the user's email for account identification.
+  flows: [authorizationCode]
+- scope: profile
+  description: Access to the user's basic profile.
+  flows: [authorizationCode]
+- scope: offline_access
+  description: Refresh-token issuance for long-lived connections.
+  flows: [authorizationCode]
+notes: >-
+  Scopes are coarse identity/consent scopes only; per-tool authorization
+  (planning vs paid generation) is enforced server-side behind the single OAuth
+  grant, not via distinct OAuth scopes. The MCP client requests openid,email,profile.

@@ -1,0 +1,52 @@
+generated: '2026-09-20'
+method: searched
+source: https://github.com/camgraphe/maxvideoai-plugin/blob/main/CHANGELOG.md
+scheme: semver
+current_version: 0.3.5
+entries:
+- version: 0.3.5
+  date: '2026-09-16'
+  breaking: false
+  highlights:
+  - Superseded the cancelled 0.3.4 candidate with corrected proof captions across guide/example consumers.
+  - Refreshed homepage and Claude-result composite documentation.
+- version: 0.3.4
+  date: '2026-09-16'
+  breaking: false
+  highlights:
+  - Publication cancelled before release; superseded by 0.3.5 (source tag frozen).
+  - Added live OpenClaw and self-hosted n8n integration paths.
+- version: 0.3.3
+  date: '2026-08-29'
+  breaking: false
+  highlights:
+  - Pointed Codex install at the focused public plugin repo with an immutable release tag.
+  - Derived release-card version/filename from VERSION to prevent stale labels.
+- version: 0.3.2
+  date: '2026-08-28'
+  breaking: false
+  highlights:
+  - Published proof-led package/discovery metadata with reviewed setup for Claude, ChatGPT, Codex.
+- version: 0.3.1
+  date: '2026-08-28'
+  breaking: false
+  highlights:
+  - Documented namespaced Codex skill invocations ($maxvideoai:plan, $maxvideoai:generate).
+- version: 0.3.0
+  date: '2026-08-28'
+  breaking: false
+  highlights:
+  - Added import_reference_files workflow to import private references into the media library.
+- version: 0.2.0
+  date: '2026-08-27'
+  breaking: false
+  highlights:
+  - Added separate plan and generate workflow skills; deterministic release packaging with checksums.
+- version: 0.1.0
+  date: '2026-08-24'
+  breaking: false
+  highlights:
+  - Initial MaxVideoAI remote MCP connector package.
+notes: >-
+  Changelog tracks the public plugin/connector package (github.com/camgraphe/maxvideoai-plugin);
+  the remote MCP server itself is versioned to match (server.json version 0.3.5).

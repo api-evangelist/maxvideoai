@@ -1,0 +1,107 @@
+name: MaxVideoAI
+aid: maxvideoai
+description: >-
+  MaxVideoAI is a multi-model AI video and image production service delivered
+  entirely through a remote MCP server, so assistants like Claude, ChatGPT and
+  Codex can plan shots, compare current video/image models, estimate project
+  budgets, prepare an exact quote, approve a single paid generation, recover
+  results, and keep media in one private account library. It is pay-as-you-go on
+  prepaid credits with no subscription, uses OAuth 2.1 (PKCE + dynamic client
+  registration) for connection, and deliberately ships no REST API or customer
+  API keys — the MCP tool surface is the product.
+tags:
+- AI
+- Video Generation
+- Image Generation
+- MCP
+- agent-native
+- Text to Video
+- Image to Video
+- Creative Production
+- Pay As You Go
+image: https://raw.githubusercontent.com/camgraphe/maxvideoai-plugin/main/assets/social/github-social-preview.png
+created: '2026-09-20'
+modified: '2026-09-20'
+url: https://raw.githubusercontent.com/api-evangelist/maxvideoai/refs/heads/main/apis.yml
+apis:
+- name: MaxVideoAI MCP
+  description: >-
+    Remote MCP server (streamable-http, OAuth 2.1) exposing 14 tools to plan,
+    compare and price AI video/image models, prepare an exact quote, approve a
+    single paid generation, and recover results into a private media library.
+  image: https://raw.githubusercontent.com/camgraphe/maxvideoai-plugin/main/assets/social/github-social-preview.png
+  humanURL: https://maxvideoai.com/docs/mcp
+  baseURL: https://api.maxvideoai.com
+  properties:
+  - type: MCPServer
+    url: https://api.maxvideoai.com/mcp
+  - type: MCPServer
+    name: MCP manifest
+    url: mcp/maxvideoai-mcp.yml
+  - type: Documentation
+    url: https://maxvideoai.com/docs/mcp
+common:
+- type: DomainSecurity
+  url: security/maxvideoai-domain-security.yml
+- type: Website
+  url: https://maxvideoai.com
+- type: Documentation
+  url: https://maxvideoai.com/docs/mcp
+- type: APIReference
+  url: https://maxvideoai.com/docs/mcp
+- type: GettingStarted
+  url: https://maxvideoai.com/integrations/claude
+- type: DeveloperPortal
+  url: https://maxvideoai.com/mcp
+- type: Pricing
+  url: https://maxvideoai.com/pricing
+- type: Blog
+  url: https://maxvideoai.com/blog
+- type: TermsOfService
+  url: https://maxvideoai.com/legal/terms
+- type: PrivacyPolicy
+  url: https://maxvideoai.com/legal/privacy
+- type: Login
+  url: https://maxvideoai.com/login
+- type: GitHubOrganization
+  url: https://github.com/camgraphe
+- type: StatusPage
+  url: https://maxvideoai.com/status
+- type: Authentication
+  url: authentication/maxvideoai-authentication.yml
+- type: OAuthScopes
+  url: scopes/maxvideoai-scopes.yml
+- type: Conventions
+  url: conventions/maxvideoai-conventions.yml
+- type: Idempotency
+  url: conventions/maxvideoai-conventions.yml
+- type: ErrorCatalog
+  url: errors/maxvideoai-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/maxvideoai-lifecycle.yml
+- type: ChangeLog
+  url: changelog/maxvideoai-changelog.yml
+- type: Conformance
+  url: conformance/maxvideoai-conformance.yml
+- type: WellKnown
+  url: well-known/maxvideoai-well-known.yml
+- type: LLMsTxt
+  url: llms/maxvideoai-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Packages
+  url: packages/maxvideoai-packages.yml
+- type: Plans
+  url: plans/maxvideoai-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/maxvideoai-rate-limits.yml
+- type: Subprocessors
+  url: https://maxvideoai.com/legal/subprocessors
+maintainers:
+- FN: MaxVideoAI
+  url: https://maxvideoai.com
+x-enrichment:
+  date: '2026-09-20'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v3

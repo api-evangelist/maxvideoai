@@ -1,0 +1,56 @@
+generated: '2026-09-20'
+method: searched
+source: https://maxvideoai.com/docs/mcp
+surface: MCP (Model Context Protocol, streamable-http, JSON-RPC 2.0)
+authentication:
+  style: OAuth 2.1 bearer (header), PKCE S256, dynamic client registration
+  cross_link: authentication/maxvideoai-authentication.yml
+idempotency:
+  coverage: partial
+  scope:
+  - confirm_generation
+  mechanism: >-
+    The paid write is a two-phase quote/approve flow: prepare_generation returns
+    an exact short-lived quote (with expiresAt) and confirm_generation submits
+    that quote idempotently. Re-issuing the same confirmed quote does not create a
+    second paid attempt; one confirmation authorizes exactly one paid attempt and
+    is consumed whether the job is accepted, failed, or refunded.
+  header: null
+  note: >-
+    Idempotency is keyed on the server-issued quote id, not a client-supplied
+    Idempotency-Key header, and covers only confirm_generation. Read tools and
+    the import/upload/topup handoffs are not described as idempotent.
+reversibility:
+  state: documented
+  detail: >-
+    There is no agent-invokable cancel/refund/undo tool. Generation is one-way:
+    a completed paid generation cannot be reversed. Failed generations are refunded
+    automatically and get_generation_status returns the refund/recredit state; a
+    refund does not restore the paid authorization (a retry needs a fresh quote and
+    approval). No reversal window is stated for a successful generation.
+  reversal_operations: []
+  window: null
+pagination:
+  style: null
+  note: Not documented for the MCP tool surface; result-set tools (list_media, list_recent_generations) return bounded lists.
+versioning:
+  scheme: semver
+  current: 0.3.5
+  cross_link: changelog/maxvideoai-changelog.yml
+request_tracing:
+  correlation_id: correlationId
+  note: INTERNAL_ERROR responses return a correlationId to retain when contacting support.
+error_envelope:
+  style: JSON-RPC 2.0 error object + named error codes
+  cross_link: errors/maxvideoai-problem-types.yml
+rate_limit_signaling:
+  note: >-
+    Docs state "server limits apply" but publish no rate-limit headers or numeric
+    limits; authenticated responses carry Cache-Control: private, no-store.
+  cross_link: rate-limits/maxvideoai-rate-limits.yml
+dry_run_mode:
+  state: na
+  note: >-
+    prepare_generation / calculate_project_budget are non-charging planning and
+    quoting steps that rehearse a request without spending, but there is no
+    per-call dry-run flag on the paid confirm.

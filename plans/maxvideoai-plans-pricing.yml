@@ -1,0 +1,24 @@
+generated: '2026-09-20'
+method: searched
+source: https://maxvideoai.com/pricing
+model: pay-as-you-go
+plan_count: 0
+currency: USD
+plans: []
+credits:
+  scheme: prepaid-wallet
+  minimum_topup: '$10'
+  overage: n/a
+  refunds: Failed generations are refunded automatically; charges apply only on successful completion.
+  checkout: Stripe (cards, Apple Pay, Google Pay where available)
+  price_before_generation: true
+per_generation:
+  note: >-
+    No subscription and no named tiers. Cost is quoted per job (prepare_generation
+    returns an exact quote before approval) and varies by engine, duration,
+    resolution (720p-4K), and audio.
+  observed_range: '$0.26 to $13.00+ per video (varies by engine/settings)'
+notes: >-
+  Connection to the MCP server and all planning/quoting tools are free; only
+  confirm_generation debits the prepaid credit balance. plan_count is 0 because
+  the provider publishes a wallet/credit model rather than subscription plans.

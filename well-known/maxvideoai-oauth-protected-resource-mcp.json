@@ -1,0 +1,1 @@
+{"resource":"https://api.maxvideoai.com/mcp","resource_name":"MaxVideoAI MCP","authorization_servers":["https://vujvontfztdzszylnsyc.supabase.co/auth/v1"],"bearer_methods_supported":["header"],"scopes_supported":["openid","email","profile"]}

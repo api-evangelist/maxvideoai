@@ -1,0 +1,27 @@
+generated: '2026-09-20'
+method: searched
+source: >-
+  https://maxvideoai.com/status, https://maxvideoai.com/docs/mcp,
+  https://github.com/camgraphe/maxvideoai-plugin/blob/main/CHANGELOG.md
+versioning:
+  scheme: semver
+  current: 0.3.5
+  docs: https://github.com/camgraphe/maxvideoai-plugin/blob/main/CHANGELOG.md
+  note: >-
+    The connector package and MCP server share a semver line. Live model
+    availability is queried at runtime (list_models / get_model_details) rather
+    than pinned, so a model can be generationEnabled:false in an environment
+    without being retired everywhere.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No formal deprecation/sunset policy published; model retirement is signalled live via tool responses.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://maxvideoai.com/status
+status_page_note: >-
+  Dedicated first-party status/notice page; currently a service-notice board
+  ("No active service notice") with refund guidance and links to docs/changelog,
+  rather than a component-level uptime dashboard.
+deprecated_operations: []
