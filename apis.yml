@@ -115,3 +115,10 @@ x-enrichment:
   status: enriched
   artifacts_added: 20
   pass: local-v3
+x-correction-request:
+  requested: '2026-09-27'
+  source: https://github.com/api-evangelist/maxvideoai/issues/1
+  request: 'Description is wrong: MaxVideoAI is a web application (multi-model AI video production, model
+    comparisons, exact pre-generation prices, media library, pay-as-you-go) with a remote MCP integration
+    as an ADDITIONAL surface -- not delivered entirely through MCP. Also refresh the llms.txt snapshot
+    from the live file.'
