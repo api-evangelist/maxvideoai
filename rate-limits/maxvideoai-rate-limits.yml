@@ -1,6 +1,7 @@
 generated: '2026-09-20'
 method: searched
 source: https://maxvideoai.com/docs/mcp
+name: MaxVideoAI API Rate Limits
 limit_count: 0
 limits: []
 response_headers: []

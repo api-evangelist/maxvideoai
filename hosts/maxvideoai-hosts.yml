@@ -1,0 +1,76 @@
+generated: '2026-09-28'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 4
+  own: 3
+  other_domain: 0
+  platform: 1
+  roles:
+  - api
+  - marketing
+  - source
+  - website
+hosts:
+- host: api.maxvideoai.com
+  found_by:
+  - apis[]
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves:
+  - api
+  registrable_domain: maxvideoai.com
+  role: api
+  relation: own
+- host: blog.maxvideoai.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: maxvideoai.com
+  role: marketing
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: maxvideoai.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - Documentation
+  - APIReference
+  - GettingStarted
+  - DeveloperPortal
+  - Pricing
+  - Blog
+  - TermsOfService
+  - PrivacyPolicy
+  - Login
+  - StatusPage
+  - Subprocessors
+  serves:
+  - docs
+  - hosting
+  vendor: vercel
+  registrable_domain: maxvideoai.com
+  role: website
+  relation: own

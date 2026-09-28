@@ -1,5 +1,8 @@
 generated: '2026-09-20'
 method: searched
+source:
+  - https://maxvideoai.com/legal/subprocessors
+  - https://maxvideoai.com/legal/privacy
 probe: true
 signals:
   subprocessors:
@@ -7,8 +10,45 @@ signals:
     stated_update: '26 October 2025'
     subprocessors: [Stripe Payments Europe Ltd., Neon Inc., Supabase, Vercel Inc., Amazon Web Services (AWS S3), Fal.ai, Resend Inc.]
     evidence:
-    - source: https://maxvideoai.com/legal/subprocessors
-      keywords: [subprocessors, stripe, supabase, aws, fal.ai, last updated]
+      - source: https://maxvideoai.com/legal/subprocessors
+        http_status: 200
+        fetched: '2026-09-28'
+        quote: "We engage the following third parties to operate the Service."
+        keywords: [subprocessors, stripe, supabase, aws, fal.ai, last updated]
+  data_subject_request:
+    url: https://maxvideoai.com/legal/privacy
+    evidence:
+      - source: https://maxvideoai.com/legal/privacy
+        http_status: 200
+        fetched: '2026-09-28'
+        quote: "Subject to conditions and applicable law, you may request access, rectification, erasure, restriction, objection, and data portability."
+        section: "Your rights (EU/EEA/UK)"
+  data_retention:
+    url: https://maxvideoai.com/legal/privacy
+    evidence:
+      - source: https://maxvideoai.com/legal/privacy
+        http_status: 200
+        fetched: '2026-09-28'
+        quote: "Account data: kept for as long as you have an account, plus limited backup retention."
+        section: "Retention"
+      - source: https://maxvideoai.com/legal/privacy
+        http_status: 200
+        fetched: '2026-09-28'
+        quote: "Receipts & financial records: stored per statutory accounting periods."
+        section: "Retention"
+      - source: https://maxvideoai.com/legal/privacy
+        http_status: 200
+        fetched: '2026-09-28'
+        quote: "Logs & telemetry: retained for short rolling windows unless needed for security or abuse investigations."
+        section: "Retention"
+  incident_notification:
+    url: https://maxvideoai.com/legal/privacy
+    evidence:
+      - source: https://maxvideoai.com/legal/privacy
+        http_status: 200
+        fetched: '2026-09-28'
+        quote: "We apply technical and organisational measures including encryption in transit, access controls, least-privilege principles, monitoring, and incident response processes."
+        section: "Security"
 notes: >-
   Only a dated subprocessor list was found. Probed and not served (404):
   /accessibility, /ai/transparency, /legal/data-residency,

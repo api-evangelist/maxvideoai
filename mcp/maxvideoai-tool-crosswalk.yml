@@ -1,0 +1,74 @@
+generated: '2026-09-28'
+method: derived
+source: mcp/maxvideoai-mcp.yml
+crosswalk:
+  - tool: get_account_status
+    category: account
+    rest: [get_account_status]
+    binding: operationId
+    confidence: high
+  - tool: list_models
+    category: models
+    rest: [list_models]
+    binding: operationId
+    confidence: high
+  - tool: get_model_details
+    category: models
+    rest: [get_model_details]
+    binding: operationId
+    confidence: high
+  - tool: recommend_models
+    category: models
+    rest: [recommend_models]
+    binding: operationId
+    confidence: high
+  - tool: calculate_project_budget
+    category: budgeting
+    rest: [calculate_project_budget]
+    binding: operationId
+    confidence: high
+  - tool: list_media
+    category: media
+    rest: [list_media]
+    binding: operationId
+    confidence: high
+  - tool: create_reference_upload_link
+    category: media
+    rest: [create_reference_upload_link]
+    binding: operationId
+    confidence: high
+  - tool: import_reference_files
+    category: media
+    rest: [import_reference_files]
+    binding: operationId
+    confidence: high
+  - tool: prepare_generation
+    category: generation
+    rest: [prepare_generation]
+    binding: operationId
+    confidence: high
+  - tool: confirm_generation
+    category: generation
+    rest: [confirm_generation]
+    binding: operationId
+    confidence: high
+  - tool: get_generation_status
+    category: generation
+    rest: [get_generation_status]
+    binding: operationId
+    confidence: high
+  - tool: list_recent_generations
+    category: generation
+    rest: [list_recent_generations]
+    binding: operationId
+    confidence: high
+  - tool: present_generation
+    category: generation
+    rest: [present_generation]
+    binding: operationId
+    confidence: high
+  - tool: create_topup_link
+    category: billing
+    rest: [create_topup_link]
+    binding: operationId
+    confidence: high
