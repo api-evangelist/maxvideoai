@@ -2,9 +2,8 @@ name: MaxVideoAI
 
 aid: maxvideoai
 
-description: MaxVideoAI is a web application (multi-model AI video production, model comparisons, exact pre‑generation pricing, media library,
-  pay‑as‑you‑go) with an additional remote MCP integration as a surface, not delivered entirely through MCP. This description exceeds two hundred
-  characters to meet the required length.
+description: MaxVideoAI is a web application for multi-model AI video production (model comparisons, exact pre-generation pricing, a media
+  library, pay-as-you-go credits), with a remote MCP integration offered as an additional surface rather than the whole product.
 
 tags:
 - Artificial Intelligence
@@ -32,7 +31,7 @@ image: https://raw.githubusercontent.com/camgraphe/maxvideoai-plugin/main/assets
 
 created: '2026-09-20'
 
-modified: '2026-09-20'
+modified: '2026-10-03'
 
 url: https://raw.githubusercontent.com/api-evangelist/maxvideoai/refs/heads/main/apis.yml
 
@@ -138,6 +137,10 @@ x-correction-request:
   request: 'Description is wrong: MaxVideoAI is a web application (multi-model AI video production, model comparisons, exact pre-generation prices,
     media library, pay-as-you-go) with a remote MCP integration as an ADDITIONAL surface -- not delivered entirely through MCP. Also refresh the
     llms.txt snapshot from the live file.'
+  applied: '2026-10-03'
+  applied_note: Applied by hand. Removed the reprofile filler sentence ("This description exceeds two hundred characters to meet the required
+    length.") from the description; the description keeps the requested web-application-plus-MCP framing. Refreshed llms.txt and llms/maxvideoai-llms.txt
+    verbatim from https://api.maxvideoai.com/llms.txt (8,873 bytes on 2026-10-03; maxvideoai.com/llms.txt serves the same file).
 x-enrichment:
   date: '2026-09-28'
   status: enriched

@@ -1,6 +1,6 @@
-generated: '2026-09-28'
+generated: '2026-10-03'
 method: probed
 generator: harvest-llms.py
 source: https://api.maxvideoai.com/llms.txt
-bytes: 8984
+bytes: 8873
 note: saved verbatim; the provider's own document

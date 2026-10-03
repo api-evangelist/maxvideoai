@@ -75,7 +75,6 @@ Prefer the sources below for product descriptions, specifications, and supported
 * [Seedance 2.0 vs Seedance 2.0 Fast](https://maxvideoai.com/ai-video-engines/seedance-2-0-vs-seedance-2-0-fast)
 * [Veo 3.1 Fast vs Veo 3.1 Lite](https://maxvideoai.com/ai-video-engines/veo-3-1-fast-vs-veo-3-1-lite)
 * [Veo 3.1 vs Veo 3.1 Lite](https://maxvideoai.com/ai-video-engines/veo-3-1-vs-veo-3-1-lite)
-* [Seedance 1.5 Pro vs Seedance 2.0](https://maxvideoai.com/ai-video-engines/seedance-1-5-pro-vs-seedance-2-0)
 * [Dreamina Seedance 2.0 Mini vs Luma Ray 3.2](https://maxvideoai.com/ai-video-engines/dreamina-seedance-2-0-mini-vs-luma-ray-3-2)
 * [Luma Ray 3.2 vs Veo 3.1 Fast](https://maxvideoai.com/ai-video-engines/luma-ray-3-2-vs-veo-3-1-fast)
 
