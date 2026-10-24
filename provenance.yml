@@ -21,7 +21,16 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
+  hosts/maxvideoai-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
+  integrations/_index.yml:
+    method: generated
+    evidence: carries an API Evangelist house phrase
+  integrations/maxvideoai-integration-edges.yml:
+    method: searched
+    evidence: declared in the artifact
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-20T232958.yml:
@@ -48,14 +57,35 @@ artifacts:
   kin/score-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   lifecycle/maxvideoai-lifecycle.yml:
     method: searched
     evidence: declared in the artifact
+  llms/maxvideoai-llms-provenance.yml:
+    method: searched
+    evidence: 'derive-llms-provenance.py: harvested'
   llms/maxvideoai-llms.txt:
     method: searched
     evidence: 'derive-llms-provenance.py: harvested'
   mcp/maxvideoai-mcp.yml:
     method: searched
+    evidence: declared in the artifact
+  mcp/maxvideoai-tool-crosswalk.yml:
+    method: derived
     evidence: declared in the artifact
   packages/maxvideoai-packages.yml:
     method: searched
@@ -82,6 +112,9 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   skills/maxvideoai-plan.md:
+    method: unknown
+    evidence: no authorship recorded
+  vendors/maxvideoai-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   well-known/maxvideoai-oauth-authorization-server.json:
